@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SEELISE — Photography</title>
+
+  <!-- Poppins font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="shortcut icon" href="/assets/web-logo.svg" type="image/x-icon">
+  <!-- Font Awesome (as requested) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!--============= HEADER =============-->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <img src="/logo.svg" alt="SEELISE logo" />
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio-preview">Portfolio</a></li>
+          <li><a href="#sample-works">Sample Works</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!--============= SECTION 1: HOME =============-->
+  <section id="home" class="section section-home">
+    <div class="container grid home-grid">
+      <div class="home-left">
+        <h1 class="logo-title">SEE ELISE</h1>
+        <h3 class="sub">"Through the Lens of SEELISE — Capturing Stories in Every Frame."</h3>
+        <button class="cta" id="workWithMeBtn">Work with me</button>
+      </div>
+
+      <div class="home-right">
+        <div class="home-images">
+          <img src="/images/image_1.jpg" alt="Featured 1" class="ratio-2-3" />
+          <img src="/images/image_2.jpg" alt="Featured 2" class="ratio-2-3" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--============= SECTION 2: ABOUT =============-->
+  <section id="about" class="section section-about">
+    <div class="container about-grid">
+      <div class="about-left">
+        <img src="/images/image_3.jpg" alt="Elise portrait" class="ratio-2-3" />
+      </div>
+
+      <div class="about-right">
+        <h2>About Me</h2>
+        <p class="about-text">
+          Hello, my name is Elise. I am 18 years old and have a hobby of photography. I am a photographer with 3 years experience as a portrait, landscape, event photographer, cinematographer, video editor, and photo enhancer. I started my career as a photographer since I was 15 years old.
+        </p>
+        <br>
+        <h2>Experience</h2>
+        <div class="experience-timeline">
+          <div class="timeline-card">
+            <div class="timeline-marker">
+              <span class="timeline-dot"></span>
+            </div>
+            <div class="timeline-card-content">
+              <div class="timeline-period">2021 - Present</div>
+              <h4 class="timeline-role">Photographer Owner</h4>
+              <p class="timeline-workplace">Marry Pix Deluxe</p>
+            </div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-marker">
+              <span class="timeline-dot"></span>
+            </div>
+            <div class="timeline-card-content">
+              <div class="timeline-period">2023</div>
+              <h4 class="timeline-role">Photographer</h4>
+              <p class="timeline-workplace">Cliffpoint Studios by Shot Clocks</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--============= SECTION 3: PORTFOLIO PREVIEW =============-->
+  <section id="portfolio-preview" class="section section-portfolio-preview">
+    <div class="container">
+      <h2 class="section-title">PORTFOLIO</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <div class="card-label">Portrait Photography</div>
+          <div class="portfolio-card" data-target="portrait">
+            <div class="card-image">
+              <img src="/images/portrait.jpg" alt="Portrait sample" />
+              <div class="overlay"><span>View Works</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="card-label">Event Photography</div>
+          <div class="portfolio-card" data-target="event">
+            <div class="card-image">
+              <img src="/images/event.jpg" alt="Event sample" />
+              <div class="overlay"><span>View Works</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="card-label">Studio Photography</div>
+          <div class="portfolio-card" data-target="studio">
+            <div class="card-image">
+              <img src="/images/studio.jpg" alt="Studio sample" />
+              <div class="overlay"><span>View Works</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--============= SECTION 4: SAMPLE WORKS =============-->
+  <section id="sample-works" class="section section-sample-works">
+    <div class="container">
+      <h2 class="section-title">SAMPLE WORKS</h2>
+
+      <!-- Portrait Row -->
+      <div id="row-portrait" class="works-row">
+        <h3 class="works-title">Portrait Photography</h3>
+        <hr class="sep" />
+        <div class="slider" data-type="portrait">
+          <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="slider-track">
+            <img src="/images/portrait_1.jpg" alt="">
+            <img src="/images/portrait_2.jpg" alt="">
+            <img src="/images/portrait_3.jpg" alt="">
+            <img src="/images/portrait_4.jpg" alt="">
+            <img src="/images/portrait_5.jpg" alt="">
+            <img src="/images/portrait_6.jpg" alt="">
+            <img src="/images/portrait_7.jpg" alt="">
+            <img src="/images/portrait_8.jpg" alt="">
+            <img src="/images/portrait_9.jpg" alt="">
+            <img src="/images/portrait_10.jpg" alt="">
+            <img src="/images/portrait_11.jpg" alt="">
+            <img src="/images/portrait_12.jpg" alt="">
+            <img src="/images/portrait_13.jpg" alt="">
+            <img src="/images/portrait_14.jpg" alt="">
+            <img src="/images/portrait_15.jpg" alt="">
+            <img src="/images/portrait_16.jpg" alt="">
+          </div>
+          <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <hr class="sep" />
+      </div>
+
+      <!-- Event Row -->
+      <div id="row-event" class="works-row">
+        <h3 class="works-title">Event Photography</h3>
+        <hr class="sep" />
+        <div class="slider" data-type="event">
+          <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="slider-track landscape">
+            <img src="/images/event_1.jpg" alt="">
+            <img src="/images/event_2.jpg" alt="">
+            <img src="/images/event_3.jpg" alt="">
+            <img src="/images/event_4.jpg" alt="">
+            <img src="/images/event_5.jpg" alt="">
+            <img src="/images/event_6.jpg" alt="">
+          </div>
+          <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <hr class="sep" />
+      </div>
+
+      <!-- Studio Row -->
+      <div id="row-studio" class="works-row">
+        <h3 class="works-title">Studio Photography</h3>
+        <hr class="sep" />
+        <div class="slider" data-type="studio">
+          <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="slider-track">
+            <img src="/images/studio_1.jpg" alt="">
+            <img src="/images/studio_2.jpg" alt="">
+            <img src="/images/studio_3.jpg" alt="">
+            <img src="/images/studio_4.jpg" alt="">
+            <img src="/images/studio_5.jpg" alt="">
+            <img src="/images/studio_6.jpg" alt="">
+            <img src="/images/studio_7.jpg" alt="">
+          </div>
+          <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <hr class="sep" />
+      </div>
+
+    </div>
+  </section>
+
+  <!--============= Section 5: Contact =============-->
+  <section id="contact" class="section section-contact">
+    <div class="container contact-container">
+      <h2 class="contact-heading">Let’s work together or chat about your next project!</h2>
+      <p class="contact-sub">Feel free to reach out.</p>
+
+      <div class="contact-list">
+        <div class="contact-item">
+          <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="info"><a href="mailto:seelise_photo@gmail.com">seelise_photo@gmail.com</a></div>
+        </div>
+
+        <div class="contact-item">
+          <div class="icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="info"><a href="tel:09123456789">0912 345 6789</a></div>
+        </div>
+
+        <div class="contact-item">
+          <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+          <div class="info"><a href="https://www.facebook.com/profile.php?id=100089134357915" target="_blank" rel="noopener">Facebook</a></div>
+        </div>
+
+        <div class="contact-item">
+          <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+          <div class="info"><a href="https://www.instagram.com/seelise_/" target="_blank" rel="noopener">Instagram</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--============= Footer =============-->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="f-logo">
+        <img src="/logo.svg" alt="SEELISE logo">
+      </div>
+      <div class="f-location">
+        <i class="fa-solid fa-location-dot"></i> Quezon City, Philippines
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="/js/script.js"></script>
+</body>
+</html>
