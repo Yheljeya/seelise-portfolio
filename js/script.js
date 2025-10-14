@@ -63,11 +63,14 @@ document.addEventListener('DOMContentLoaded', function () {
       prevBtn.disabled = scrollLeft <= 0;
       
       // Disable next button if at the end (with small tolerance for rounding)
-      nextBtn.disabled = scrollLeft >= maxScroll - 1;
+      // Also check if there's actually content to scroll
+      nextBtn.disabled = maxScroll <= 1 || scrollLeft >= maxScroll - 1;
     }
 
-    // Initial button state
-    updateButtonStates();
+    // Initial button state - delay to ensure images are loaded and layout is complete
+    setTimeout(() => {
+      updateButtonStates();
+    }, 100);
 
     prevBtn.addEventListener('click', () => {
       if (!prevBtn.disabled) {
