@@ -46,6 +46,43 @@ body{
   justify-content:space-between;
 }
 .header-inner .logo img{height:20px; display:block}
+
+/* Hamburger menu button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  justify-content: space-between;
+  z-index: 60;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
 .main-nav ul{
   list-style:none;
   display:flex;
@@ -57,6 +94,7 @@ body{
   color:var(--white);
   text-decoration:none;
   font-weight:600;
+  transition: all 0.3s ease;
 }
 .main-nav a:hover{
   opacity:0.8;
@@ -295,6 +333,99 @@ body{
   opacity:1;
 }
 
+/* Touch interactions for mobile */
+.portfolio-card.touch-active img{ transform:scale(1.06) }
+.portfolio-card.touch-active .overlay{
+  background: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(6, 6, 27, 0.8) 100%);
+  opacity:1;
+}
+
+/* Prevent text selection during touch interactions */
+.slider-track.active {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Touch-friendly button sizing */
+@media (max-width: 768px) {
+  .cta {
+    min-height: 44px;
+    min-width: 120px;
+    touch-action: manipulation;
+  }
+  
+  .hamburger {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+  
+  .slider button {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+  
+  .main-nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    touch-action: manipulation;
+  }
+}
+
+/* Tablet touch optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cta {
+    touch-action: manipulation;
+    transition: all 0.2s ease;
+  }
+  
+  .cta:active {
+    transform: scale(0.98);
+  }
+  
+  .slider button {
+    touch-action: manipulation;
+    transition: all 0.2s ease;
+  }
+  
+  .slider button:active {
+    transform: scale(0.95);
+  }
+  
+  .portfolio-card {
+    touch-action: manipulation;
+  }
+  
+  .slider-track img {
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .slider-track img:active {
+    transform: scale(1.02);
+  }
+  
+  /* Enhanced hover states for tablets with mouse support */
+  @media (hover: hover) {
+    .timeline-card:hover {
+      background: rgba(215, 91, 208, 0.08);
+      border-color: rgba(215, 91, 208, 0.25);
+      transform: translateX(6px);
+    }
+    
+    .cta:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
+    }
+    
+    .slider button:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-1px);
+    }
+  }
+}
+
 /*=============== Sample Works ===============*/
 .section-sample-works{ background:var(--bg-deep); }
 .works-row{ margin:40px 0; }
@@ -463,4 +594,477 @@ body{
   .contact-grid{ grid-template-columns:1fr; }
   .slider-track img{ width:180px; height:270px }
   .slider-track.landscape img{ width:320px; height:200px }
+}
+
+/* Tablet responsive styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+    padding: 20px 15px;
+  }
+
+  /* Header adjustments */
+  .header-inner .logo img {
+    height: 22px;
+  }
+
+  .main-nav ul {
+    gap: 35px;
+  }
+
+  .main-nav a {
+    font-size: 15px;
+  }
+
+  /* Home section optimizations */
+  .section-home {
+    padding-top: 90px;
+    padding-bottom: 70px;
+  }
+
+  .home-grid {
+    gap: 40px;
+    align-items: center;
+  }
+
+  .logo-title {
+    font-size: 64px;
+    margin-bottom: 12px;
+  }
+
+  .sub {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+
+  .cta {
+    padding: 14px 26px;
+    font-size: 15px;
+  }
+
+  .home-images {
+    gap: 25px;
+    justify-content: center;
+  }
+
+  .ratio-2-3 {
+    width: 260px;
+  }
+
+  /* About section */
+  .about-grid {
+    grid-template-columns: 320px 1fr;
+    gap: 35px;
+  }
+
+  .about-right h2 {
+    font-size: 26px;
+    margin: 0 15px 15px 15px;
+  }
+
+  .about-text {
+    margin: 10px 15px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .experience-timeline {
+    margin: 15px 0 0 15px;
+  }
+
+  .timeline-card {
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+
+  .timeline-role {
+    font-size: 15px;
+  }
+
+  .timeline-workplace {
+    font-size: 13px;
+  }
+
+  /* Portfolio section */
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .card-label {
+    font-size: 15px;
+    padding: 10px 16px;
+  }
+
+  /* Sample works */
+  .works-title {
+    font-size: 19px;
+    margin: 8px 0 14px 0;
+  }
+
+  .slider {
+    gap: 10px;
+  }
+
+  .slider button {
+    padding: 11px;
+    font-size: 15px;
+  }
+
+  .slider-track {
+    gap: 18px;
+  }
+
+  .slider-track img {
+    width: 200px;
+    height: 300px;
+  }
+
+  .slider-track.landscape img {
+    width: 360px;
+    height: 220px;
+  }
+
+  /* Contact section */
+  .contact-heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .contact-sub {
+    font-size: 15px;
+    margin-bottom: 35px;
+  }
+
+  .contact-list {
+    max-width: 300px;
+    gap: 18px;
+  }
+
+  .contact-item {
+    grid-template-columns: 38px auto;
+    font-size: 15px;
+  }
+
+  .contact-item .icon i {
+    font-size: 20px;
+  }
+
+  /* Footer */
+  .f-logo img {
+    height: 36px;
+  }
+
+  .f-location {
+    font-size: 14px;
+  }
+}
+
+/* Small tablet adjustments (iPad Mini, smaller tablets in portrait) */
+@media (min-width: 769px) and (max-width: 900px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .home-images {
+    justify-content: center;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .about-left img {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .slider-track img {
+    width: 180px;
+    height: 270px;
+  }
+
+  .slider-track.landscape img {
+    width: 320px;
+    height: 200px;
+  }
+}
+
+/* Tablet landscape specific adjustments */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .container {
+    max-width: 95%;
+  }
+
+  .logo-title {
+    font-size: 72px;
+  }
+
+  .ratio-2-3 {
+    width: 280px;
+  }
+
+  .about-grid {
+    grid-template-columns: 350px 1fr;
+  }
+
+  .slider-track img {
+    width: 220px;
+    height: 330px;
+  }
+
+  .slider-track.landscape img {
+    width: 380px;
+    height: 240px;
+  }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px 20px;
+  }
+
+  /* Header and Navigation */
+  .hamburger {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 280px;
+    background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+    backdrop-filter: blur(10px);
+    transition: right 0.3s ease;
+    z-index: 55;
+    padding-top: 80px;
+  }
+
+  .main-nav.active {
+    right: 0;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 30px;
+    align-items: flex-start;
+  }
+
+  .main-nav a {
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+  }
+
+  .main-nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    padding-left: 10px;
+    transform: translateX(5px);
+  }
+
+  /* Home section */
+  .section-home {
+    padding-top: 100px;
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .logo-title {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .sub {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .cta {
+    padding: 14px 28px;
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .home-images {
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ratio-2-3 {
+    width: 240px;
+    max-width: 90%;
+  }
+
+  /* About section */
+  .about-grid {
+    gap: 30px;
+  }
+
+  .about-left img {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .about-right h2 {
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+  }
+
+  .about-text {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  .experience-timeline {
+    margin: 20px 0 0 0;
+  }
+
+  .timeline-card {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* Portfolio section */
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .portfolio-item {
+    gap: 12px;
+  }
+
+  .card-label {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  /* Sample works sliders */
+  .works-title {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  .slider {
+    gap: 8px;
+  }
+
+  .slider button {
+    padding: 10px;
+    min-width: 40px;
+    font-size: 14px;
+  }
+
+  .slider-track {
+    gap: 15px;
+  }
+
+  .slider-track img {
+    width: 160px;
+    height: 240px;
+  }
+
+  .slider-track.landscape img {
+    width: 280px;
+    height: 180px;
+  }
+
+  /* Contact section */
+  .contact-heading {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .contact-sub {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .contact-list {
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  .contact-item {
+    grid-template-columns: 35px auto;
+    font-size: 14px;
+  }
+
+  .contact-item .icon i {
+    font-size: 18px;
+  }
+
+  /* Footer */
+  .f-logo img {
+    height: 32px;
+  }
+
+  .f-location {
+    font-size: 14px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px 15px;
+  }
+
+  .logo-title {
+    font-size: 36px;
+  }
+
+  .ratio-2-3 {
+    width: 200px;
+  }
+
+  .main-nav {
+    width: 100%;
+    right: -100%;
+  }
+
+  .slider-track img {
+    width: 140px;
+    height: 210px;
+  }
+
+  .slider-track.landscape img {
+    width: 240px;
+    height: 150px;
+  }
+
+  .portfolio-grid {
+    max-width: 280px;
+  }
 }
